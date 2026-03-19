@@ -88,27 +88,40 @@ To see your stats *(statistics)* go to the stats page `/stats`. There you will s
 
 You need python and pip.
 then when in the folder execute
+```
+python3 -m venv venv
+````
+to create a virtual environment.
 
-`python3 -m venv venv`
+Then run the following for Mac/Linux
+````
+source venv/bin/activate
+````
+or this on Windows
+````
+venv\Scripts\activate
+````
 
- to create a virtual environment.
+Then run
 
- Then run `source venv/bin/activate` On Mac/Linux and `venv\Scripts\activate` on Windows
+````
+pip install -r requirements.txt
+````
 
- Then run
+To install all the requiered packages.
 
- ``pip install -r requirements.txt``
-
- To install all the requiered packages.
-
- Then run the following comands to set everything else up:
+Then run the following comands to set everything else up:
 
 ````
 export FLASK_APP=app.py
 export FLASK_ENV=development  # Optional, for development mode
 ````
 
-then to run just type ``flask run`` and LearnTime should run on `http://127.0.0.1:5000/`
+then to run just type 
+```
+flask run
+```
+and LearnTime should run on `http://127.0.0.1:5000/`
 
 
 ---
