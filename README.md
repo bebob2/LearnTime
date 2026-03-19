@@ -1,5 +1,4 @@
 # LearnTime - Learn it! • Time it! • Track it!
-#### Video Demo:  <URL HERE>
 #### Description:
 LearnTime is a LearnTime Tracker. So what exactly can it do?
 
