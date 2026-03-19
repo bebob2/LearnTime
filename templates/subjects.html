@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Subjects
+{% endblock %}
+
+{% block main %}
+
+    <script src="/static/button-sounds.js"></script>
+
+
+    <h1>Subjects</h1>
+    <p class="mb-5">You can add a new subject here:</p>
+
+    <form action="/subjects" method="post">
+
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto mb-5" name="subject" placeholder="Subject Name" type="text" required>
+
+        <button class="btn btn-primary mb-5 button-add-sfx" type="submit">Add Subject</button>
+
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">List of all Subjects:</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for subject in subjects %}
+                <tr>
+                    <td>{{ subject.subject }}</td>
+                    <td>
+                        <form action="/delete_subject" method="post" style="display: inline;">
+                            <input type="hidden" name="subject_id" value="{{ subject.id }}">
+                            <button class="btn btn-danger button-pop-sfx confirm-delete" type="submit">Delete</button>
+                        </form>
+                        <form action="/edit_subject" method="get" style="display: inline;">
+                            <input type="hidden" name="subject_id" value="{{ subject.id }}">
+                            <button class="btn btn-secondary button-add-sfx" type="submit">Edit</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

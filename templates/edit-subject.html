@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Subject
+{% endblock %}
+
+{% block main %}
+
+    <script src="/static/button-sounds.js"></script>
+
+
+    <h1>Edit Subject</h1>
+    <p class="mb-5">You can edit the subject name here:</p>
+
+    <form action="/edit_subject" method="post">
+
+        <input type="hidden" name="subject_id" value="{{ subject.id }}">
+
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto mb-5" name="subject" placeholder="Subject Name" type="text" value="{{ subject.subject }}" required>
+
+        <button class="btn btn-primary mb-5 button-add-sfx" type="submit">Save Changes</button>
+
+    </form>
+
+{% endblock %}
+
+<!-- This file was created by copilot -->

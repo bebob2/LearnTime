@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block main %}
+
+    <!-- Title and Description -->
+    Hello World, this is
+    <h1>LearnTime!</h1>
+    <p class="mb-5">Learn it! • Time it! • Track it!</p>
+    <hr>
+
+    <h2>About LearnTime</h2>
+
+    <p>
+        LearnTime is a LearnTime Tracker. So what exactly can it do?
+    </p>
+    <div class="d-flex justify-content-center"> <!--this line was created with the help of copilot-->
+        <ul class="text-start">
+            <li> it can be just an easy to use simple timer</li>
+            <li> you can assign your timer to different subjects</li>
+            <li> you can add/remove/edit subjects</li>
+            <li> you can see the total time learned for each subject</li>
+            <li> you can register or login</li>
+            <li> you can save up to 4 preset timers</li>
+        </ul>
+    </div>
+    <p>
+        And all of that in an easy to use, intuitive design. That's what makes LearnTime so great.
+    </p>
+    <p>
+        Try it out free of charge right now by signing up or signing in:
+    </p>
+    <a href="/register">
+        <button  class="beautiful-button">Get Started</button>
+    </a>
+
+    <hr>
+    <h2>About the Creator</h2>
+    <p>
+        Hello, world. I am Benjamin, the creator of LearnTime.
+    </p>
+    <p>
+        I am a student in my first semester at TU Berlin and I created LearnTime as a final project for Harvard University's CS50 course.
+    </p>
+
+{% endblock %}

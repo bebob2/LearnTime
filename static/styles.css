@@ -1,0 +1,84 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+    padding: 0.5rem;
+}
+
+main{
+    margin:20px;
+    flex: 1 0 auto;
+}
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    flex-shrink: 0;
+    align-items: center;
+    text-align: center;
+    min-height: 5rem;
+    background-color: rgba(43, 48, 53, 0.6);
+    backdrop-filter: blur(20px);
+}
+
+nav{
+    position: fixed;
+    background-color: rgba(43, 48, 53, 0.6);
+    backdrop-filter: blur(20px);
+}
+
+/* Timer layout */
+.timer-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.timer-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-display h2 {
+    margin: 0;
+}
+
+@keyframes quickAppear{
+    from{
+        opacity: 0;
+        transform: scale(0.9) translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.beautiful-button{
+    background-color: #36415f;
+    color: white;
+    animation: quickAppear 1s ease-out forwards;
+    border-radius: 25px;
+    border: none;
+    padding: 15px;
+    box-shadow: -4px 4px 30px rgb(0 0 0 / 40%);
+    margin: 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.beautiful-button:hover{
+    background-color: #1b2130;
+    transform: scale(1.1) !important;
+}
+
+.beautiful-img{
+    border-radius: 25px;
+    box-shadow: -8px 8px 30px black;
+}
+.beautiful-img:hover{
+    transform: scale(1.2);
+}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <div class="mb-5">
+        Welcome to your Account page, <b>{{ data[0]["username"] }}</b>
+    </div>
+    <div class="mb-5">
+        <button class="btn btn-primary" onclick="location.href='/change_password'">Change Password</button>
+    </div>
+
+    <hr>
+
+    <div class="mb-5">
+        <button class="btn btn-primary" onclick="location.href='/history'">See Study History for each Subject</button>
+        <p class="m-2">Note: Timers that were not assigned to a subject will not appear in the history.</p>
+    </div>
+
+    <!-- <div class="mb-5">
+        <button class="btn btn-primary" type="submit"></button>
+    </div> -->
+
+{% endblock %}

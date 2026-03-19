@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Presets
+{% endblock %}
+
+{% block main %}
+
+    <script src="/static/button-sounds.js"></script>
+
+
+    <h1>Presets</h1>
+    <p class="mb-5">You can add a new timer preset here (up to 4 presets allowed):
+        <br>
+        <span class="text-muted">Note: You can only set integer values for minutes.</span>
+    </p>
+
+    {% if presets|length < 4 %}
+    <form action="/presets" method="post">
+
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto mb-5" name="minutes" placeholder="Min." type="number" min="0" max="1440" required>
+
+        <button class="btn btn-primary mb-5 button-add-sfx" type="submit">Add Preset</button>
+
+    </form>
+    {% endif %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">List of all Presets:</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for preset in presets %}
+                <tr>
+                    <td>{{ preset.minutes }} min</td>
+                    <td>
+                        <form action="/delete_preset" method="post" style="display: inline;">
+                            <input type="hidden" name="preset_id" value="{{ preset.id }}">
+                            <button class="btn btn-danger button-pop-sfx confirm-delete" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

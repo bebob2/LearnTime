@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <h1>Stats</h1>
+    <p class="mb-5">You can see your history here:
+        <br>
+        <span class="text-muted">
+            *Note: Timers that were not assigned to a subject will not appear in the history. Sorting: the newest at the bottom
+        </span>
+    </p>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Subject</th>
+                <th scope="col">Total Minutes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row.subject }}</td>
+                    <td>{{ row.minutes | round(2) }} min</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+    <script src="/static/timer.js"></script>
+
+
+    <!-- Title and Description -->
+    <h1>LearnTime!</h1>
+    <p class="mb-5">Learn it! • Time it! • Track it!</p>
+    <hr>
+
+    <!-- Timer Controls -->
+    <div class="timer-control">
+        <button class="btn btn-secondary" id="decButton" type="button">-</button>
+        <div class="timer-display">
+            <h2 id="timer">10:00</h2>
+            <span>Minutes</span>
+        </div>
+        <button class="btn btn-secondary" id="incButton" type="button">+</button>
+    </div>
+    <progress max="90" value="90"></progress>
+
+    <!-- Subject Selection -->
+    <select id="subjectSelect" class="form-select w-auto mx-auto mt-3 mb-3">
+        <option value="" disabled selected>Select Subject</option>
+        {% for subject in subjects %}
+            <option value="{{ subject.id }}">{{ subject.subject }}</option>
+        {% endfor %}
+    </select>
+
+
+    <!-- Preset Buttons -->
+    {% for preset in presets %}
+        <button class="btn btn-secondary preset-btn" value="{{ preset.minutes }}" type="button">{{ preset.minutes }} min</button>
+    {% endfor %}
+
+    <!------->
+
+    <hr>
+    <button class="btn btn-success" id="startButton" type="button">Start</button>
+    <button class="btn btn-warning" id="resetButton" type="button">Reset</button>
+    <button class="btn btn-danger" id="stopButton" type="button" disabled>Stop</button>
+
+{% endblock %}
